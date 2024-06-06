@@ -1,0 +1,25 @@
+<div class=" container">
+    <app-profile></app-profile>
+    <div class="all-blog-container" *ngFor="let recipe of recipes">
+        <mat-card class="card-class">
+
+            <img mat-card-image src={{recipe.recipeImageUrl}} alt="burger-image" />
+            <mat-card-header matTooltip="lorem">
+                <mat-card-title class="header">
+                    {{recipe.recipeTitle}}
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="card-content">
+                <p>
+                    {{recipe.recipeDesc}}
+                </p>
+            </mat-card-content>
+            <mat-card-footer>
+                <mat-card-actions class="card-button">
+                    <button mat-button (click)="goToPage('edit',recipe.id)">Edit</button>
+                    <button mat-button (click)="deleteRecipe(recipe.id)">Delete</button>
+                </mat-card-actions>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</div>

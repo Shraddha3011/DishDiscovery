@@ -1,0 +1,54 @@
+<section>
+    <div class="hero-recipe-part">
+        <div class="bgImage">
+            <img src="../../../assets/bg-image-show-blog.png" alt="image">
+            <div class="image-overlay"></div>
+        </div>
+        <div class="heading recipe-title">
+            {{recipe.recipeTitle}}
+        </div>
+        <div class="sub-heading">
+            {{recipe.recipeDesc}}
+        </div>
+        <div class="frontImage">
+            <img src={{recipe.recipeImageUrl}} alt="frontImage">
+        </div>
+    </div>
+    <div class="subhero">
+        <div class="subhero-recipe-part">
+            <div class="content-div">
+                <h2 class="subhero-recipe-part-heading">Ingredients :</h2>
+                <ul>
+                    <li *ngFor="let ingredient of recipe.recipeIngridents">{{ ingredient }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subhero-recipe-part">
+            <div class="content-div">
+                <h2 class="subhero-recipe-part-heading">Method :</h2>
+                <ul>
+                    <li *ngFor="let step of recipe.recipeMethod">{{ step }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subhero-recipe-part">
+            <div class="content-div">
+                <h2 class="subhero-recipe-part-heading">Estimated Time :</h2>
+                <p>{{recipe.recipeCookingTime}}</p>
+            </div>
+        </div>
+        <div class="subhero-recipe-part" *ngIf="recipe.recipeComment && recipe.recipeComment.length > 0">
+            <h2 class="content-div">Comments:</h2>
+            <ul>
+                <li *ngFor="let comment of recipe.recipeComment">{{ comment }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="comment-section">
+        <h2 class="comment-heading">Comment Here : </h2>
+        <textarea class="comment-area" [rows]="textareaRows" [(ngModel)]="userComment" [cols]="textareaCols"></textarea>
+        <button mat-raised-button (click)="submitComment()" class="submit-button">Submit</button>
+        <!-- <button mat-raised-button class="comment-submit" (click)="submitComment()">Submit</button> -->
+    </div>
+</section>

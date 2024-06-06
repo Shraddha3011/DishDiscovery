@@ -1,0 +1,70 @@
+.nav {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 4rem;
+    background-color: #171717;
+    color: white;
+    font-family: "Lexend", sans-serif;
+
+
+    a {
+        margin-right: 20px;
+        font-size: var(--font-size-buttons);
+        font-family: "Lexend", sans-serif;
+    }
+
+    .spacer {
+        flex: 1 1 auto;
+    }
+
+    .nav-button {
+        opacity: 1;
+    }
+
+    .nav-button:hover {
+        transform: scale(1.05);
+        background: #000;
+        color: white;
+        transition: transform 0.3s ease;
+        opacity: 1;
+
+    }
+
+}
+
+a {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    opacity: 0.5;
+    margin-left: 1.2rem;
+    font-family: "Lexend", sans-serif;
+}
+
+a:last-child {
+    margin-right: 0;
+}
+
+a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+
+a:hover:after {
+    width: 100%;
+    background: #D18700;
+    opacity: 1;
+}
+
+.active {
+    opacity: 1;
+}

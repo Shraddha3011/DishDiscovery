@@ -1,0 +1,86 @@
+<section>
+    <div class="image-contanier"></div>
+    <div class="main-title">
+        <div class="title">
+            DishDiscovery
+        </div>
+        <div class="subtitle">
+            "From Kitchen Creations to International Flavors"
+        </div>
+    </div>
+
+    <div class="hero-container">
+        <div class="hero-content">
+            <h3>DISHDISCOVERY</h3>
+            <h4>
+                "Unleashing Culinary Creativity, One Recipe at a Time!"
+            </h4>
+            <div class="hero-buttons">
+                <a mat-raised-button routerLink="search" routerLinkActive="active"
+                    [routerLinkActiveOptions]={exact:true}>Get All Recipes</a>
+                <a mat-raised-button routerLink="create" routerLinkActive="active"
+                    [routerLinkActiveOptions]={exact:true}>Upload Your Own Recipe</a>
+            </div>
+        </div>
+        <div class="image-slider-container">
+            <app-courosel [images]="images"></app-courosel>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="all-blog-container" *ngFor="let recipe of recipes.slice(0, 3) ">
+            <mat-card class="card-class"
+                *ngIf="searchText === '' || recipe.recipeTitle.toLowerCase().includes(searchText) || recipe.tags.includes(searchText) ">
+
+                <img mat-card-image src={{recipe.recipeImageUrl}} alt="burger-image" />
+                <mat-card-header matTooltip="{{recipe.recipeTitle}}">
+                    <mat-card-title class="header">
+                        {{truncateTitle(recipe.recipeTitle)}}
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card-content">
+                    <p>
+                        {{truncateDescription(recipe.recipeDesc)}}
+                    </p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <mat-card-actions class="card-button">
+                        <div class="like">
+                            <button mat-button [ngClass]="{'liked-button': recipe.isLiked}"
+                                (click)="onLikeClick(recipe)">
+                                <span class="like-count">{{ recipe.likeCount }} </span><mat-icon
+                                    class="favourite">favorite</mat-icon>
+                            </button>
+
+                        </div>
+                        <button mat-button (click)="goToPage('show-blog',recipe.id)">Show More</button>
+
+                    </mat-card-actions>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+
+
+    </div>
+    <div class="showmore-button">
+        <a mat-raised-button routerLink="search" routerLinkActive="active"
+            [routerLinkActiveOptions]={exact:true}>Explore More</a>
+    </div>
+
+    <div class="subhero-container">
+        <div class="subhero-heading">
+            <h1>Share and Discover Amazing Recipes</h1>
+            <h3>Explore a wide variety of mouth-watering recipes shared by our community of passionate home
+                cooks.From appetizers to desserts, we have something for everyone.</h3>
+        </div>
+        <div class="subhero-subheading">
+            <div class="slogan">
+                Connect With Food Lovers!!
+            </div>
+            <div class="subhero-image">
+                <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="image">
+            </div>
+        </div>
+    </div>
+</section>

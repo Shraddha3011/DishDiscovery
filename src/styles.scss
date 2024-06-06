@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+html,
+body {
+    height: 100%;
+
+}
+
+body {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend", sans-serif;
+}
+
+:root {
+    --font-size-title: 24px;
+    --font-size-subtitle: 1.5rem;
+    --font-size-content: 16px;
+    --font-size-buttons: 1.2rem;
+}

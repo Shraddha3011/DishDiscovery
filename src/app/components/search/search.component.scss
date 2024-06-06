@@ -1,0 +1,26 @@
+input {
+    padding: 15px;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    width: 50rem;
+    box-shadow: 3px 3px 3px rgba(0.2, 0.2, 0.2, 12);
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 20px;
+    background-color: #171717;
+    color: #fff;
+    border: 1px solid silver;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 3px 3px 3px rgba(0.2, 0.2, 0.2, 12);
+
+    &:hover {
+        background-color: #000000;
+        color: #ddd;
+    }
+}
